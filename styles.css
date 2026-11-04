@@ -132,3 +132,28 @@ footer a { text-underline-offset: 3px; }
 
 :focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; border-radius: 6px; }
 @media (prefers-reduced-motion: reduce) { .card { transition: none; } }
+
+/* ---------- document pages (privacy, support) ---------- */
+.bar {
+  background: linear-gradient(90deg, #2b1d4a 0%, #5b3a7a 45%, #d4566a 80%, #f4a640 100%);
+  color: #fff7ee;
+  padding: 18px 0;
+}
+.bar .wrap { display: flex; justify-content: space-between; align-items: center; font-size: 15px; letter-spacing: .02em; }
+.bar a { text-decoration: none; }
+.bar .mark { font-family: var(--serif); font-size: 19px; }
+.bar a.link:hover { text-decoration: underline; }
+
+.doc { padding: clamp(40px, 7vw, 72px) 0 clamp(48px, 8vw, 88px); }
+.doc .wrap { max-width: 720px; }
+.doc h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(32px, 5vw, 46px); line-height: 1.1; margin: 0 0 8px; letter-spacing: -.01em; }
+.doc .updated { color: var(--ink-soft); font-size: 15px; margin: 0 0 32px; }
+.doc .short {
+  background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+  padding: 18px 22px; margin: 0 0 8px; font-size: 19px;
+}
+.doc h2 { font-size: 24px; margin: 40px 0 8px; }
+.doc p, .doc li { color: var(--ink-soft); }
+.doc ul { padding-left: 22px; }
+.doc a { text-underline-offset: 3px; }
+.doc a:hover { color: var(--coral); }
