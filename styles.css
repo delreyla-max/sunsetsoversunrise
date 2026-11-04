@@ -1,0 +1,134 @@
+:root {
+  --ink: #2a1f2d;
+  --ink-soft: #5d4f60;
+  --paper: #fbf5ec;
+  --card: #ffffff;
+  --line: #eadfce;
+  --coral: #e8604c;
+  --amber: #f4a640;
+  --dusk: #3b2a5a;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #f6ece0;
+    --ink-soft: #c7b8c4;
+    --paper: #1b1424;
+    --card: #271c33;
+    --line: #3a2d49;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 18px;
+  line-height: 1.6;
+}
+a { color: inherit; }
+
+.wrap { width: min(1040px, 100% - 48px); margin-inline: auto; }
+
+/* ---------- hero ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  color: #fff7ee;
+  background: linear-gradient(180deg, #2b1d4a 0%, #5b3a7a 38%, #d4566a 68%, #f4a640 100%);
+  padding: 28px 0 0;
+}
+.hero nav {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 15px; letter-spacing: .02em;
+}
+.hero nav .mark { font-family: var(--serif); font-size: 19px; text-decoration: none; }
+.hero nav a.link { text-decoration: none; opacity: .9; }
+.hero nav a.link:hover { opacity: 1; text-decoration: underline; }
+
+.hero-body { padding: clamp(72px, 14vw, 150px) 0 clamp(120px, 20vw, 200px); position: relative; z-index: 2; }
+.hero h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(40px, 8vw, 84px);
+  line-height: 1.05;
+  letter-spacing: -.01em;
+  margin: 0 0 20px;
+  max-width: 14ch;
+}
+.hero p.lede {
+  font-size: clamp(18px, 2.4vw, 22px);
+  max-width: 34ch;
+  margin: 0;
+  opacity: .95;
+}
+
+.sun {
+  position: absolute; z-index: 1;
+  right: clamp(-60px, 6vw, 90px);
+  bottom: -90px;
+  width: clamp(220px, 34vw, 400px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 40%, #ffe3a3 0%, #ffbf5e 55%, #ff9a4d 100%);
+  box-shadow: 0 0 120px 30px rgba(255, 190, 100, .45);
+}
+.horizon {
+  position: absolute; z-index: 3; left: 0; right: 0; bottom: 0; height: 56px;
+  background: var(--paper);
+  clip-path: polygon(0 60%, 12% 40%, 26% 58%, 41% 30%, 55% 55%, 70% 36%, 84% 56%, 100% 38%, 100% 100%, 0 100%);
+}
+
+/* ---------- sections ---------- */
+section { padding: clamp(48px, 8vw, 88px) 0; }
+h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(28px, 4vw, 40px);
+  margin: 0 0 12px;
+  letter-spacing: -.005em;
+}
+.sub { color: var(--ink-soft); margin: 0 0 40px; max-width: 52ch; }
+
+.grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); }
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 28px;
+  display: flex; flex-direction: column; gap: 10px;
+  text-decoration: none;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+a.card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(59, 42, 90, .12); }
+.icon {
+  width: 56px; height: 56px; border-radius: 14px;
+  display: grid; place-items: center; margin-bottom: 6px;
+}
+.icon svg { width: 32px; height: 32px; }
+.i-bubble { background: linear-gradient(135deg, #7fd3ff, #4aa3e8); }
+.i-island { background: linear-gradient(135deg, #2f6f73, #1c4a5a); }
+.i-camp   { background: linear-gradient(135deg, #f4a640, #e8604c); }
+.card h3 { font-family: var(--serif); font-weight: 500; font-size: 24px; margin: 0; }
+.card p { margin: 0; color: var(--ink-soft); font-size: 16.5px; }
+.tag {
+  margin-top: auto; padding-top: 10px;
+  font-size: 14px; font-weight: 600; letter-spacing: .03em; color: var(--coral);
+}
+.tag.soon { color: var(--ink-soft); font-weight: 500; }
+
+.about { border-top: 1px solid var(--line); }
+.about p { max-width: 58ch; color: var(--ink-soft); }
+
+/* ---------- footer ---------- */
+footer { border-top: 1px solid var(--line); padding: 36px 0 56px; font-size: 15px; color: var(--ink-soft); }
+footer .row { display: flex; flex-wrap: wrap; gap: 8px 28px; justify-content: space-between; }
+footer a { text-underline-offset: 3px; }
+
+:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; border-radius: 6px; }
+@media (prefers-reduced-motion: reduce) { .card { transition: none; } }
