@@ -109,23 +109,6 @@ img { max-width: 100%; }
   .row-link .go { margin-top: 6px; text-align: left; }
 }
 
-/* ---------- feature (CampsiteScan) ---------- */
-.feature { padding: clamp(56px, 9vw, 112px) 0; }
-.feature h2 {
-  font-weight: 800; font-size: clamp(36px, 6vw, 72px); line-height: 1; letter-spacing: -.04em; margin: 12px 0 clamp(28px, 4vw, 48px);
-}
-.feature-body { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 56px); align-items: start; }
-.shot { display: block; border: 2px solid var(--rule); }
-.shot img { display: block; width: 100%; height: auto; }
-.feature-text ul { list-style: none; margin: 0 0 32px; padding: 0; }
-.feature-text li { border-top: 2px solid var(--rule); padding: 16px 0; color: var(--mute); }
-.feature-text li:last-child { border-bottom: 2px solid var(--rule); }
-.feature-text li strong { display: block; color: var(--fg); font-weight: 800; font-size: 20px; letter-spacing: -.01em; }
-@media (max-width: 820px) {
-  .feature-body { grid-template-columns: 1fr; }
-  .shot { max-width: 340px; }
-}
-
 /* ---------- buttons: square, solid ---------- */
 .btn {
   display: inline-block;
